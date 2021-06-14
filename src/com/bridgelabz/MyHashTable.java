@@ -1,11 +1,11 @@
 package com.bridgelabz;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Objects;
 
 public class MyHashTable<K, V> {
 	// bucketArray is used to store array of chains
-	private ArrayList<MyMapNode<K, V>> bucketArray;
+	private LinkedList<MyMapNode<K, V>> bucketArray;
 
 	// Current capacity of array list
 	private int numBuckets;
@@ -16,7 +16,7 @@ public class MyHashTable<K, V> {
 	// Constructor (Initializes capacity, size and
 	// empty chains.
 	public MyHashTable() {
-		bucketArray = new ArrayList<>();
+		bucketArray = new LinkedList<>();
 		numBuckets = 10;
 		size = 0;
 
@@ -144,8 +144,8 @@ public class MyHashTable<K, V> {
 		// If load factor goes beyond threshold, then
 		// double hash table size
 		if ((1.0 * size) / numBuckets >= 0.7) {
-			ArrayList<MyMapNode<K, V>> temp = bucketArray;
-			bucketArray = new ArrayList<>();
+			LinkedList<MyMapNode<K, V>> temp = bucketArray;
+			bucketArray = new LinkedList<>();
 			numBuckets = 2 * numBuckets;
 			size = 0;
 			for (int i = 0; i < numBuckets; i++)
