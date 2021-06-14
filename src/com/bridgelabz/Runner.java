@@ -10,6 +10,11 @@ public class Runner {
 			value = (value == null) ? Integer.valueOf(1) : value + 1;
 			myHashTable.add(strArray[i].toLowerCase(), value);
 		}
+		System.out.println("Hash table before remove");
+		myHashTable.show();
+		System.out.println();
+		myHashTable.remove("avoidable");
+		System.out.println("Hash table after remove");
 		myHashTable.show();
 	}
 }
